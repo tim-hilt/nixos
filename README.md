@@ -1,4 +1,15 @@
-# Options
+# Install
+
+To install, clone the repository, delete your `/etc/nixos`-directory and create a soft-link from the cloned repository to `/etc/`.
+
+``` bash
+$ git clone https://github.com/tim-hilt/nixos
+$ doas ln -s nixos/ /etc/
+```
+
+# Todo
+
+## Options
 
 - [x] doas instead of sudo
 - [x] pipewire instead of pulseaudio
@@ -6,22 +17,21 @@
 - [ ] dotfiles-management with home-manager
 - [x] correct keyboard-model and locales
 - [x] configuration.nix with symlink
-- [ ] systemd-errors
 - [ ] btrfs-partition
 - [x] Configure Bluetooth
 
-# Window Managers
+## Window Managers
 
-## KDE
+### KDE
 
 - [x] Windows-tiling script
 - [x] no titlebar, when maximized
 
-## dwm
+### dwm
 
 - [ ] Build own nix-package
 
-# Packages
+## Packages
 
 - [x] spotify
 - [x] vs-code

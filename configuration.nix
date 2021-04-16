@@ -63,9 +63,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound.
-  sound.enable = true;
-  # hardware.pulseaudio.enable = true;  # Not needed, as long as pipewire works
+  # Enable sound. Not needed, as long as pipewire works
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = true;
 
   security.rtkit.enable = true;
 
@@ -114,6 +114,7 @@
     go
     rustc
     neovim-nightly
+    plasma-pa
   ];
 
   # Add overlay for neovim-nightly
