@@ -11,6 +11,7 @@ $ doas ln -s nixos/ /etc/
 
 <details>
   <summary>Click to expand!</>
+
   ## Options
   
   - [x] doas instead of sudo
