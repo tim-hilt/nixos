@@ -1,6 +1,6 @@
 # Options
 
-- [ ] doas instead of sudo
+- [x] doas instead of sudo
 - [x] pipewire instead of pulseaudio
 - [x] packages from unstable channel
 - [ ] dotfiles-management with home-manager
@@ -12,7 +12,6 @@
 # KDE
 
 - [ ] Windows-tiling script
-- [ ] sddm theme
 - [x] no titlebar, when maximized
 
 # Packages

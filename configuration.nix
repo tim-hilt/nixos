@@ -32,9 +32,14 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_TIME = "de_DE.UTF-8";
+    LC_MONETARY = "de_DE.UTF-8";
+  };
+
   console = {
     font = "Lat2-Terminus16";
     keyMap = "de";
@@ -72,12 +77,23 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  security.sudo.enable = false;
+
+  security.doas = {
+    enable = true;
+    extraRules = [{
+      users = [ "tim" ];
+      noPass = false;
+      keepEnv = true;
+    }];
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tim = {
     isNormalUser = true;
     shell = pkgs.fish;
     description = "Tim Hilt";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "networkmanager" ];
   };
 
   # List packages installed in system profile. To search, run:
