@@ -10,7 +10,7 @@ $ doas ln -s nixos/ /etc/
 # Todo
 
 <details>
-  <summary>Click to expand!</>
+  <summary>Click to expand!</summary>
 
   ## Options
   
