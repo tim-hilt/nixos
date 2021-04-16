@@ -29,6 +29,9 @@
   networking.interfaces.wlp4s0.useDHCP = true;
   networking.interfaces.wwp0s20f0u6i12.useDHCP = true;
 
+  # Configure Bluetooth
+  hardware.bluetooth.enable = true;
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";

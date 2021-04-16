@@ -8,11 +8,18 @@
 - [x] configuration.nix with symlink
 - [ ] systemd-errors
 - [ ] btrfs-partition
+- [x] Configure Bluetooth
 
-# KDE
+# Window Managers
 
-- [ ] Windows-tiling script
+## KDE
+
+- [x] Windows-tiling script
 - [x] no titlebar, when maximized
+
+## dwm
+
+- [ ] Build own nix-package
 
 # Packages
 
