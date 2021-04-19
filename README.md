@@ -22,6 +22,7 @@ $ doas ln -s nixos/ /etc/
   - [x] configuration.nix with symlink
   - [ ] btrfs-partition
   - [x] Configure Bluetooth
+  - [ ] Make setup modular, so that multiple machines can use the same preconfigured options (`common.nix` + conditional import, based on hostname or something like that)
   
   ## Window Managers
   
