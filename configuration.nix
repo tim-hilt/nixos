@@ -102,10 +102,8 @@
     ranger
     tmux
     htop
-    git
     go
     rustc
-    neovim-nightly
   ];
 
   # Enable the OpenSSH daemon.
@@ -114,13 +112,13 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tim = {
     isNormalUser = true;
-    shell = pkgs.fish;
     description = "Tim Hilt";
-    extraGroups = [ "networkmanager" ];
+   extraGroups = [ "networkmanager" ];
   };
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
+  
   home-manager.users.tim = { pkgs, ... }: {
     home.packages = with pkgs; [
       spotify
@@ -129,6 +127,24 @@
       alacritty
       plasma-pa
     ];
+    programs = {
+      fish.enable = true;
+      neovim = {
+        enable = true;
+	package = pkgs.neovim-nightly;
+        viAlias = true;
+	vimAlias = true;
+	extraConfig = ''
+          inoremap jk <ESC>
+	  vnoremap jk <ESC>
+	'';
+      };
+      git = {
+        enable = true;
+	userName = "Tim Hilt";
+	userEmail = "timhilt@live.de";  # This is something, that would have to be modularized
+      };
+    };
   };
 
   # This value determines the NixOS release from which the default
