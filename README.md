@@ -22,6 +22,8 @@ $ doas ln -s nixos/ /etc/
   - [x] configuration.nix with symlink
   - [ ] btrfs-partition
   - [x] Configure Bluetooth
+  - [ ] Docker for container-management
+  - [ ] Custom nvim-setup (tim-hilt/init.vim)
   
   ## Window Managers
   
