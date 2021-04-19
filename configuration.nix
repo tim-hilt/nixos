@@ -142,7 +142,7 @@
       git = {
         enable = true;
 	userName = "Tim Hilt";
-	userEmail = "timhilt@live.de";  # This is something, that would have to be modularized
+	userEmail = "timhilt@live.de";  # This is something, that would have to be modularized!
       };
     };
   };
