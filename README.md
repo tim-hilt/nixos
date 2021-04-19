@@ -24,6 +24,8 @@ $ doas ln -s nixos/ /etc/
   - [x] Configure Bluetooth
   - [ ] Docker for container-management
   - [ ] Custom nvim-setup (tim-hilt/init.vim)
+  - [ ] Make setup modular, so that multiple machines can use the same preconfigured options (`common.nix` + conditional import, based on hostname or something like that)
+  - [ ] Don't commit `hardware.nix`!
   
   ## Window Managers
   
