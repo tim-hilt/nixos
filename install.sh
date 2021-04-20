@@ -1,8 +1,22 @@
 #! /usr/bin/env sh
 
-# 1. Add all channels
-# 2. Delete /etc/nixos/configuration.nix
-# 3. Symlink ./configuration.nix to /etc/nixos/configuration.nix (does this work in a multi-file-context?)
-# 4. Run nixos-rebuild switch with all the files in place
-# 5. Delete old generations
-# 6. Reboot
+# Add needed channels
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+
+# Move files into place
+cp /etc/nixos/hardware-configuration.nix .
+chown hardware-configuration.nix $USER
+rm -rf /etc/nixos
+ln -s $(pwd) /etc/nixos
+
+# Install all the files
+nixos-rebuild switch --upgrade
+
+# Delete unnecessary files
+nix-collect-garbage -d
+
+# Reboot
+echo "Machine will reboot in 5 seconds"
+reboot
