@@ -52,6 +52,9 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
+  # dwm related
+  services.xserver.windowManager.dwm.enable = true;
+
   # Configure keymap in X11
   services.xserver.layout = "de";
   services.xserver.xkbVariant = "nodeadkeys";
@@ -73,7 +76,10 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.xserver.libinput = {
+    enable = true;
+    touchpad.naturalScrolling = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -88,32 +94,36 @@
     }];
   };
 
-  # Add overlay for neovim-nightly
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    ranger
+    tmux
+    htop
+  ];
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+
+  # Enable fish. It can lead to weird bugs, if this line is not included
+  programs.fish.enable = true;
+
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
     }))
   ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    ranger
-    tmux
-    htop
-    go
-    rustc
-  ];
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.tim = {
-    isNormalUser = true;
-    description = "Tim Hilt";
-   extraGroups = [ "networkmanager" ];
+  users.users= { 
+    tim = {
+      isNormalUser = true;
+      description = "Tim Hilt";
+      shell = pkgs.fish;
+      extraGroups = [ "networkmanager" ];
+    };
+    root = {
+      shell = pkgs.fish;
+    };
   };
 
   home-manager.useUserPackages = true;
@@ -124,11 +134,17 @@
       spotify
       vscode
       google-chrome
-      alacritty
       plasma-pa
+      wget
+      go
+      rustc
+      dmenu
+      fd
+      gnumake
+      ripgrep
+      hack-font
     ];
     programs = {
-      fish.enable = true;
       neovim = {
         enable = true;
 	package = pkgs.neovim-nightly;
@@ -136,13 +152,16 @@
 	vimAlias = true;
 	extraConfig = ''
           inoremap jk <ESC>
-	  vnoremap jk <ESC>
+          vnoremap jk <ESC>
 	'';
       };
       git = {
         enable = true;
 	userName = "Tim Hilt";
-	userEmail = "timhilt@live.de";  # This is something, that would have to be modularized!
+	userEmail = "timhilt@live.de";  # TODO: This is something, that would have to be modularized!
+      };
+      alacritty = {
+        enable = true; # TODO: Add custom settings
       };
     };
   };
