@@ -26,10 +26,11 @@ If you're me:
   - [x] configuration.nix with symlink (superseeded by setup-script)
   - [ ] (btrfs-partition)
   - [x] Configure Bluetooth
-  - [ ] ~~Docker~~ Podman for container-management
+  - [ ] ~~Docker~~ Podman for container-management (Kubernetes? kubectl / kind / helm...)
   - [ ] Make setup modular, so that multiple machines can use the same preconfigured options (`common.nix` + conditional import, based on hostname or something like that)
-  - [ ] Don't commit `hardware.nix`!
-  - [ ] Write setup-script
+  - [x] Don't commit `hardware.nix`!
+  - [x] Write setup-script
+  - [ ] Configure alacritty via home-manager
   
   ## Window Managers
   
@@ -55,5 +56,6 @@ If you're me:
 
   ### Neovim
 
-  - [ ] Migrate init.vim to home-manager
+  - [ ] (Migrate init.vim to home-manager)
+  - [ ] Find correct way to configure neovim (maybe it's better to install system-wide and just manage .config/nvim via home-manager?)
 </details>
