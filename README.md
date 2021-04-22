@@ -18,27 +18,29 @@ If you're me:
 
   ## Options
   
+  - [ ] Configure alacritty via home-manager
+  - [ ] Make setup modular
+    - [Inspiration](https://github.com/rummik/nixos-config)
+  - [ ] Find out, how to configure Displayport-Audio
+  - [ ] ~~Docker~~ Podman for container-management (Kubernetes? kubectl / kind / helm...)
+  - [ ] *btrfs-partition* (On hold)
   - [x] doas instead of sudo
   - [x] pipewire instead of pulseaudio
   - [x] packages from unstable channel
   - [x] dotfiles-management with home-manager
   - [x] correct keyboard-model and locales
   - [x] configuration.nix with symlink (superseeded by setup-script)
-  - [ ] (btrfs-partition)
   - [x] Configure Bluetooth
-  - [ ] ~~Docker~~ Podman for container-management (Kubernetes? kubectl / kind / helm...)
-  - [ ] Make setup modular, so that multiple machines can use the same preconfigured options (`common.nix` + conditional import, based on hostname or something like that)
   - [x] Don't commit `hardware.nix`!
   - [x] Write setup-script
-  - [ ] Configure alacritty via home-manager
   
   ## Window Managers
   
   ### KDE
   
+  - [ ] hello window decorations
   - [x] Windows-tiling script
   - [x] no titlebar, when maximized
-  - [ ] hello window decorations
   
   ### dwm
   
@@ -57,5 +59,6 @@ If you're me:
   ### Neovim
 
   - [ ] (Migrate init.vim to home-manager)
-  - [ ] Find correct way to configure neovim (maybe it's better to install system-wide and just manage .config/nvim via home-manager?)
+  - [x] Find correct way to configure neovim (maybe it's better to install system-wide and just manage .config/nvim via home-manager?)
+    - Build custom packages and include them in the config
 </details>

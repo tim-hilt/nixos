@@ -3,7 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  vimPlugsFromSource = (import ./nvim/nvim-plugins.nix) pkgs;
+in
 {
   imports =
     [
@@ -94,6 +96,8 @@
     }];
   };
 
+  environment.variables = { EDITOR = "nvim"; VISUAL = "nvim"; };
+
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     ranger
@@ -147,21 +151,37 @@
     programs = {
       neovim = {
         enable = true;
-	package = pkgs.neovim-nightly;
+        package = pkgs.neovim-nightly;
         viAlias = true;
-	vimAlias = true;
+        vimAlias = true;
+        plugins = with pkgs.vimPlugins; [
+          nvim-treesitter
+          vim-commentary
+          vim-surround
+          # Custom-built packages
+          vimPlugsFromSource.nvim-autopairs
+          vimPlugsFromSource.rainbow-parentheses
+        ];
 	extraConfig = ''
-          inoremap jk <ESC>
-          vnoremap jk <ESC>
+	  ${builtins.readFile ./nvim/init.vim}
 	'';
       };
       git = {
         enable = true;
-	userName = "Tim Hilt";
-	userEmail = "timhilt@live.de";  # TODO: This is something, that would have to be modularized!
+        userName = "Tim Hilt";
+        userEmail = "timhilt@live.de";  # TODO: This is something, that would have to be modularized!
       };
       alacritty = {
         enable = true; # TODO: Add custom settings
+        settings = {
+          key_bindings = [
+            {
+              key = "Return";
+              mods = "Shift";
+              chars = "\\x1b[13;2u";
+            }
+          ];
+        };
       };
     };
   };
