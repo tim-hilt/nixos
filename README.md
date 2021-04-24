@@ -18,12 +18,16 @@ If you're me:
 
   ## Options
   
-  - [ ] Configure alacritty via home-manager
+  - [ ] Configure dunst via home-manager
+  - [ ] Use flakes
   - [ ] Make setup modular
     - [Inspiration](https://github.com/rummik/nixos-config)
   - [ ] Find out, how to configure Displayport-Audio
   - [ ] ~~Docker~~ Podman for container-management (Kubernetes? kubectl / kind / helm...)
   - [ ] *btrfs-partition* (On hold)
+  - [x] Try out autorandr
+  - [x] Try out bluetooth on dwm
+  - [x] Configure alacritty via home-manager
   - [x] doas instead of sudo
   - [x] pipewire instead of pulseaudio
   - [x] packages from unstable channel
@@ -38,27 +42,30 @@ If you're me:
   
   ### KDE
   
-  - [ ] hello window decorations
+  - [ ] hello window decorations *(In Progress)*
   - [x] Windows-tiling script
   - [x] no titlebar, when maximized
   
   ### dwm
   
-  - [ ] Build own nix-package
+  - [x] Find better way of installing and managing the package
+    - Auto push to `dwm-src`-repository; include this repository in the dwm overlay
+  - [x] Include battery-percentage in status-bar
+  - [x] Build own nix-package
   
   ## Packages
   
+  - [ ] openvpn *(work-configuration)*
+  - [ ] intellij-idea *(work-configuration)*
   - [x] spotify
   - [x] vs-code
-  - [ ] openvpn
-  - [ ] intellij-idea
   - [x] nvim-nightly
   - [x] go
   - [x] rust
 
   ### Neovim
 
-  - [ ] (Migrate init.vim to home-manager)
+  - [ ] Migrate init.vim to home-manager *(In progress)*
   - [x] Find correct way to configure neovim (maybe it's better to install system-wide and just manage .config/nvim via home-manager?)
     - Build custom packages and include them in the config
 </details>
