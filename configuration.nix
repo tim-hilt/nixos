@@ -16,6 +16,7 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -110,7 +111,6 @@ in
   services.openssh.enable = true;
 
   programs = {
-    fish.enable = true;
     light.enable = true;
   };
 
@@ -164,13 +164,25 @@ in
       udiskie
       playerctl
       alsaUtils
-      ntfs3g
       sxiv
-      starship # TODO: Integrate into config!
       highlight
     ];
     programs = {
       zathura.enable = true;
+      fish = {
+        enable = true;
+        shellAbbrs = {
+          rs = "doas nixos-rebuild switch";
+          k = "kill (ps aux | fzf | awk '{print $2}')";
+        };
+      };
+      starship = {
+        enable = true;
+        enableFishIntegration = true;
+      };
+      fzf = {
+        enable = true;
+      };
       autorandr = {
         enable = true;
         hooks.postswitch = {
