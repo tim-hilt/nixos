@@ -19,6 +19,7 @@ If you're me:
   ## Options
   
   - [ ] Configure dunst via home-manager
+  - [ ] Install and configure gammastep (successor to redshift)
   - [ ] Use flakes
   - [ ] Make setup modular
     - [Inspiration](https://github.com/rummik/nixos-config)
@@ -65,7 +66,8 @@ If you're me:
 
   ### Neovim
 
-  - [ ] Migrate init.vim to home-manager *(In progress)*
+  - [x] Migrate init.vim to home-manager
+    - I actually tagged that as "in-progress" before, but since I basically learned everything I need to know to include new stuff, I'll mark that as done.
   - [x] Find correct way to configure neovim (maybe it's better to install system-wide and just manage .config/nvim via home-manager?)
     - Build custom packages and include them in the config
 </details>

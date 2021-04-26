@@ -57,6 +57,7 @@ in
   # dwm related
   services.xserver.windowManager.dwm.enable = true;
   services.autorandr.enable = true;
+  services.logind.lidSwitchDocked = "suspend";
 
   # Configure keymap in X11
   services.xserver.layout = "de";
@@ -165,9 +166,11 @@ in
       alsaUtils
       ntfs3g
       sxiv
-      starship
+      starship # TODO: Integrate into config!
+      highlight
     ];
     programs = {
+      zathura.enable = true;
       autorandr = {
         enable = true;
         hooks.postswitch = {
