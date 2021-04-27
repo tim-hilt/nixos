@@ -43,7 +43,8 @@ If you're me:
   
   ### KDE
   
-  - [ ] hello window decorations *(In Progress)*
+  - [x] hello window decorations
+    - Package is not as clean as it could be
   - [x] Windows-tiling script
   - [x] no titlebar, when maximized
   
