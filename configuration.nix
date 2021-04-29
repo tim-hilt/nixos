@@ -110,7 +110,7 @@ in
         owner = "n4n0GH";
         repo = "hello";
         rev = "master";
-        sha256 = "sha256:1898swsq07rwnd3gdff7v153hzyv9k1hf5817z7a7gr8rphbn3km";
+        sha256 = "1898swsq07rwnd3gdff7v153hzyv9k1hf5817z7a7gr8rphbn3km";
       };
       nativeBuildInputs = with pkgs; [
         cmake
@@ -132,9 +132,11 @@ in
         libsForQt5.qt5.qtx11extras
       ];
       preConfigure = ''
+        local modulepath=$(kf5-config --install module)
+        local datapath=$(kf5-config --install data)
         substituteInPlace kwin-effects/CMakeLists.txt \
-        --replace "\''${MODULEPATH}" "$out/qt-5.15.2/plugins" \
-        --replace "\''${DATAPATH}"   "$out/share"
+        --replace "\''${MODULEPATH}" "$out/''${modulepath#/nix/store/*/}" \
+        --replace "\''${DATAPATH}"   "$out/''${datapath#/nix/store/*/}"
       '';
     })
     ranger
@@ -158,7 +160,7 @@ in
           owner = "tim-hilt";
           repo = "dwm-src";
           rev = "main";
-          sha256 = "sha256:0yb9n715i569mm257c2mf0k1f4y0ayqx7mms7dvp58kz09p64303";
+          sha256 = "0yb9n715i569mm257c2mf0k1f4y0ayqx7mms7dvp58kz09p64303";
         };
       });
     })
@@ -183,7 +185,6 @@ in
   home-manager.users.tim = { pkgs, ... }: {
     home.packages = with pkgs; [
       spotify
-      vscode
       google-chrome
       plasma-pa
       wget
@@ -202,6 +203,33 @@ in
       highlight
     ];
     programs = {
+      vscode = {
+        enable = true;
+        extensions = (with pkgs.vscode-extensions; [
+            eamodio.gitlens
+            file-icons.file-icons
+            github.github-vscode-theme
+            coenraads.bracket-pair-colorizer-2
+            bbenoist.Nix
+        ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "vscode-fileutils";
+            publisher = "sleistner";
+            version = "3.4.5";
+            sha256 = "0f5n0i337h8bc66zv7j54rl42na09jpcivhs5s5f59g4vavrhfk7";
+          }
+        ];
+        userSettings = {
+          "workbench.colorTheme" = "GitHub Light";
+          "workbench.sideBar.location" = "right";
+          "workbench.iconTheme" = "file-icons";
+          "workbench.startupEditor" = "none";
+          "editor.minimap.enabled" = false;
+          "window.menuBarVisibility" = "toggle";
+          "breadcrumbs.enabled" = false;
+          "workbench.settings.editor" = "json";
+        };
+      };
       zathura.enable = true;
       fish = {
         enable = true;
