@@ -1,3 +1,4 @@
+pkgs:
 {
   enable = true;
   extensions = (with pkgs.vscode-extensions; [
@@ -22,5 +23,7 @@
     "window.menuBarVisibility" = "toggle";
     "breadcrumbs.enabled" = false;
     "workbench.settings.editor" = "json";
+    "git.confirmSync" = false;
+    "editor.selectionClipboard" = false;
   };
 }

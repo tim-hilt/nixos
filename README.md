@@ -1,4 +1,8 @@
-# Install
+# NixOS configuration
+
+NixOS is a Linux-distribution based on the nix-package-manager. Its biggest strength is its declarative nature, which ultimately leads to reproducible builds.
+
+## Installation
 
 To install:
 
@@ -11,21 +15,30 @@ If you're me:
 3. Clone this repository to a sensible location
 4. Run `sh install.sh`
 
-# Todo
+## Current issues
+
+- [ ] Titlebar-buttons are not correctly shown in the settings for window-decorations
+- [ ] KDEs notification-daemon is overwritten by dunst
+
+## Todo
 
 <details>
   <summary>Click to expand!</summary>
 
-  ## Options
+  ### Options
   
+  - [ ] Use `cachix` for `nvim-nightly` and `dwm`-overlay
   - [ ] Configure dunst via home-manager
   - [ ] Install and configure gammastep (successor to redshift)
   - [ ] Use flakes
   - [ ] Make setup modular
     - [Inspiration](https://github.com/rummik/nixos-config)
+    - [ ] Modular as in *split up into multiple files*
+    - [ ] Modular as in *for multiple hosts*
+  - [ ] Bootstrapper for this configuration
   - [ ] Find out, how to configure Displayport-Audio
-  - [ ] ~~Docker~~ Podman for container-management (Kubernetes? kubectl / kind / helm...)
-  - [ ] *btrfs-partition* (On hold)
+  - [ ] ~~Docker~~ Podman for container-management (Kubernetes? kubectl / kind / helm...) *(work-configuration)*
+  - [ ] *btrfs-partition (On hold)*
   - [x] Try out autorandr
   - [x] Try out bluetooth on dwm
   - [x] Configure alacritty via home-manager
@@ -39,33 +52,34 @@ If you're me:
   - [x] Don't commit `hardware.nix`!
   - [x] Write setup-script
   
-  ## Window Managers
+  ### Window Managers
   
-  ### KDE
+  #### KDE
   
   - [x] hello window decorations
     - Package is not as clean as it could be
   - [x] Windows-tiling script
   - [x] no titlebar, when maximized
   
-  ### dwm
+  #### dwm
   
   - [x] Find better way of installing and managing the package
     - Auto push to `dwm-src`-repository; include this repository in the dwm overlay
   - [x] Include battery-percentage in status-bar
   - [x] Build own nix-package
   
-  ## Packages
+  ### Packages
   
   - [ ] openvpn *(work-configuration)*
   - [ ] intellij-idea *(work-configuration)*
+  - [ ] Microsoft Teams *(work-configuration)*
   - [x] spotify
   - [x] vs-code
   - [x] nvim-nightly
   - [x] go
   - [x] rust
 
-  ### Neovim
+  #### Neovim
 
   - [x] Migrate init.vim to home-manager
     - I actually tagged that as "in-progress" before, but since I basically learned everything I need to know to include new stuff, I'll mark that as done.
