@@ -1,15 +1,13 @@
 {
-  imports = [ ./hardware-configuration.nix ../common/default.nix ];
+  imports = [ ./hardware-configuration.nix ../common ];
+
+  networking.hostName = "x1carbon";
 
   # Profile-additions
   home-manager.users.tim = {
     programs = {
       autorandr = import ./autorandr.nix;
-      git = {
-        enable = true;
-        userName = "Tim Hilt";
-        userEmail = "timhilt@live.de";
-      };
+      git.userEmail = "timhilt@live.de";
     };
   };
 }

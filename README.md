@@ -18,6 +18,7 @@ If you're me:
 ## Current issues
 
 - [ ] Titlebar-buttons are not correctly shown in the settings for window-decorations
+  - Workaround is to edit `~/.config/kwinrc` directly
 - [ ] KDEs notification-daemon is overwritten by dunst
 
 ## Todo
@@ -33,12 +34,11 @@ If you're me:
   - [ ] Use flakes
   - [ ] Make setup modular
     - [Inspiration](https://github.com/rummik/nixos-config)
-    - [ ] Modular as in *split up into multiple files*
+    - [x] Modular as in *split up into multiple files*
     - [ ] Modular as in *for multiple hosts*
   - [ ] Bootstrapper for this configuration
   - [ ] Find out, how to configure Displayport-Audio
   - [ ] ~~Docker~~ Podman for container-management (Kubernetes? kubectl / kind / helm...) *(work-configuration)*
-  - [ ] *btrfs-partition (On hold)*
   - [x] Try out autorandr
   - [x] Try out bluetooth on dwm
   - [x] Configure alacritty via home-manager
@@ -70,9 +70,9 @@ If you're me:
   
   ### Packages
   
-  - [ ] openvpn *(work-configuration)*
-  - [ ] intellij-idea *(work-configuration)*
-  - [ ] Microsoft Teams *(work-configuration)*
+  - [x] openvpn *(work-configuration)*
+  - [x] intellij-idea *(work-configuration)*
+  - [x] Microsoft Teams *(work-configuration)*
   - [x] spotify
   - [x] vs-code
   - [x] nvim-nightly

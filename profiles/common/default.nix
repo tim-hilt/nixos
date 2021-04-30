@@ -1,9 +1,5 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
-let vimPlugsFromSource = (import ./nvim/nvim-plugins.nix) pkgs;
+let vimPlugsFromSource = (import ./nvim) pkgs;
 in {
   imports = [ <home-manager/nixos> ];
 
@@ -12,7 +8,6 @@ in {
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -199,12 +194,17 @@ in {
       fish = {
         enable = true;
         shellAbbrs = {
-          nrs = "doas nixos-rebuild switch -I nixos-config=/home/tim/dev/nixos/configuration.nix";
+          # Below is the command that builds the system selectively:
+          nrs =
+            "doas nixos-rebuild switch -I nixos-config=/home/tim/dev/nixos/profiles/$hostname";
           k = "kill (ps aux | fzf | awk '{print $2}')";
           gpm = "git push -u origin main";
-          nn = "cd ~/dev/nixos && nvim configuration.nix";
           r = "ranger";
         };
+      };
+      git = {
+        enable = true;
+        userName = "Tim Hilt";
       };
       starship = {
         enable = true;
@@ -239,6 +239,4 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
-
 }
-

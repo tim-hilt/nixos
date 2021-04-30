@@ -1,3 +1,3 @@
 {
-    imports = [ ./profiles/x1carbon/default.nix ];
+    imports = [ ./profiles/x1carbon ];  # TODO: Make this more modular; differentiate based on hostname or something
 }
