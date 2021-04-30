@@ -1,3 +1,3 @@
 {
-    imports = [ ./profiles/x1carbon/configuration.nix ];
+    imports = [ ./profiles/x1carbon/default.nix ];
 }

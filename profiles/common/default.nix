@@ -199,7 +199,7 @@ in {
       fish = {
         enable = true;
         shellAbbrs = {
-          nrs = "doas nixos-rebuild switch";
+          nrs = "doas nixos-rebuild switch -I nixos-config=/home/tim/dev/nixos/configuration.nix";
           k = "kill (ps aux | fzf | awk '{print $2}')";
           gpm = "git push -u origin main";
           nn = "cd ~/dev/nixos && nvim configuration.nix";

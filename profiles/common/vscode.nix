@@ -25,5 +25,11 @@ pkgs:
     "workbench.settings.editor" = "json";
     "git.confirmSync" = false;
     "editor.selectionClipboard" = false;
+    "workbench.editor.enablePreviewFromQuickOpen" = false;
+    "workbench.editor.enablePreview" = false;
+    "editor.scrollbar.horizontal" = "hidden";
+    "editor.scrollbar.vertical" = "hidden";
+    "telemetry.enableTelemetry" = false;
+    "telemetry.enableCrashReporter" = false;
   };
 }

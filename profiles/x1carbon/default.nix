@@ -1,5 +1,5 @@
 {
-  imports = [ ./hardware-configuration.nix ../common/configuration.nix ];
+  imports = [ ./hardware-configuration.nix ../common/default.nix ];
 
   # Profile-additions
   home-manager.users.tim = {
