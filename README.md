@@ -76,8 +76,6 @@ If you're me:
   - [x] spotify
   - [x] vs-code
   - [x] nvim-nightly
-  - [x] go
-  - [x] rust
 
   #### Neovim
 

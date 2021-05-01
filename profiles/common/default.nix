@@ -93,42 +93,7 @@ in {
     VISUAL = "nvim";
   };
 
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    (pkgs.libsForQt5.callPackage ({ mkDerivation }: mkDerivation) { } rec {
-      name = "hello";
-      version = "Hidden Hedgehog";
-      src = pkgs.fetchFromGitHub {
-        owner = "n4n0GH";
-        repo = "hello";
-        rev = "master";
-        sha256 = "1898swsq07rwnd3gdff7v153hzyv9k1hf5817z7a7gr8rphbn3km";
-      };
-      nativeBuildInputs = with pkgs; [ cmake ];
-      buildInputs = with pkgs; [
-        extra-cmake-modules
-        epoxy
-        xorg.libXdmcp
-        libsForQt5.kconfig
-        libsForQt5.kconfigwidgets
-        libsForQt5.kcrash
-        libsForQt5.kglobalaccel
-        libsForQt5.kio
-        libsForQt5.kinit
-        libsForQt5.kwin
-        libsForQt5.knotifications
-        libsForQt5.qt5.qtbase
-        libsForQt5.qt5.qttools
-        libsForQt5.qt5.qtx11extras
-      ];
-      preConfigure = ''
-        local modulepath=$(kf5-config --install module)
-        local datapath=$(kf5-config --install data)
-        substituteInPlace kwin-effects/CMakeLists.txt \
-        --replace "\''${MODULEPATH}" "$out/''${modulepath#/nix/store/*/}" \
-        --replace "\''${DATAPATH}"   "$out/''${datapath#/nix/store/*/}"
-      '';
-    })
     ranger
     tmux
   ];
@@ -186,6 +151,7 @@ in {
       sxiv
       highlight
       nixfmt
+      (import ./hello-derivation.nix pkgs)
     ];
     programs = {
       vscode = import ./vscode.nix pkgs;
@@ -195,8 +161,9 @@ in {
         enable = true;
         shellAbbrs = {
           # Below is the command that builds the system selectively:
-          nrs =
-            "doas nixos-rebuild switch -I nixos-config=/home/tim/dev/nixos/profiles/$hostname";
+          nrs = ''
+            doas nixos-rebuild switch -I nixos-config=/home/tim/dev/nixos/profiles/$hostname
+          '';
           k = "kill (ps aux | fzf | awk '{print $2}')";
           gpm = "git push -u origin main";
           r = "ranger";
