@@ -1,8 +1,6 @@
-{
-  imports = [ ./hardware-configuration.nix ../common ];
-
-  networking.hostName = "x1carbon";
-
+{ pkgs, ... }: {
+  imports = [ ./hardware-configuration.nix  ];
+  
   # Profile-additions
   home-manager.users.tim = {
     programs = {

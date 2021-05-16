@@ -1,3 +1,5 @@
+" TODO: Check mjlbachs sane template!
+
 " Autostart
 autocmd VimEnter * RainbowParentheses
 

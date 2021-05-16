@@ -2,7 +2,7 @@
   enable = true;
   settings = {
     env = {
-      TERM = "xterm-256color";
+      TERM = "xterm-256color";  # TODO: Do I need this?
       WINIT_X11_SCALE_FACTOR = "1";
     };
     window = {
@@ -15,6 +15,7 @@
       normal.family = "Hack";
       size = 11.0;
     };
+    # TODO: Revisit the color choices here
     colors = {
       primary = {
         background = "0x282c34";
