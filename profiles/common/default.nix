@@ -7,6 +7,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
 
+  nix.package = pkgs.nixUnstable;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -75,18 +80,7 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  security.sudo.enable = false;
-
-  security.doas = {
-    enable = true;
-    extraRules = [{
-      users = [ "tim" ];
-      noPass = false;
-      keepEnv = true;
-    }];
-  };
-
+  
   environment.variables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
@@ -125,7 +119,7 @@
       isNormalUser = true;
       description = "Tim Hilt";
       shell = pkgs.fish;
-      extraGroups = [ "networkmanager" "video" ];
+      extraGroups = [ "wheel" "networkmanager" "video" ];
     };
     root = { shell = pkgs.fish; };
   };
