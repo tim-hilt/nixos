@@ -1,11 +1,6 @@
 { pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix  ];
-  
+  imports = [ ./hardware-configuration.nix ./autorandr.nix ];
+
   # Profile-additions
-  home-manager.users.tim = {
-    programs = {
-      autorandr = import ./autorandr.nix;
-      git.userEmail = "timhilt@live.de";
-    };
-  };
+  home-manager.users.tim.programs.git.userEmail = "timhilt@live.de";
 }

@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  imports = [ ./alacritty.nix ./vscode.nix ./nvim.nix ];
+
   home.packages = with pkgs; [
     spotify
     google-chrome
@@ -17,9 +19,8 @@
     nixfmt
     # (import ./hello-derivation.nix pkgs)  # Commented out until I know how to properly use this with flakes
   ];
+
   programs = {
-    vscode = import ./vscode.nix { inherit pkgs; };
-    alacritty = import ./alacritty.nix;
     zathura.enable = true;
     fish = {
       enable = true;
@@ -38,6 +39,5 @@
     };
     fzf = { enable = true; };
     htop = { enable = true; };
-    neovim = import ./nvim { inherit pkgs; };
   };
 }
