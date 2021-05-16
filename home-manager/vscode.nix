@@ -2,7 +2,6 @@
   programs.vscode = {
     enable = true;
     extensions = (with pkgs.vscode-extensions; [
-      # TODO: Add Vim-ext along with config
       eamodio.gitlens
       file-icons.file-icons
       github.github-vscode-theme
