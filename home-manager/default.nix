@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./alacritty.nix ./vscode.nix ./nvim.nix ];
+  imports = [ ./alacritty.nix ./vscode.nix ./nvim ];
 
   home.packages = with pkgs; [
     spotify
