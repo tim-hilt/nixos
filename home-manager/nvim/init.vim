@@ -1,7 +1,7 @@
 " TODO: Check mjlbachs sane template!
 
 " Autostart
-autocmd VimEnter * RainbowParentheses
+" autocmd VimEnter * RainbowParentheses
 
 set completeopt=menu,menuone,noselect
 syntax on 
@@ -50,6 +50,6 @@ MUtils.completion_confirm=function()
 end
 
 
-remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
-require('nvim-autopairs').setup()
-EOF
+" remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
+" require('nvim-autopairs').setup()
+" EOF
