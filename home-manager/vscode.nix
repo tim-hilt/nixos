@@ -31,6 +31,7 @@
       "editor.scrollbar.vertical" = "hidden";
       "telemetry.enableTelemetry" = false;
       "telemetry.enableCrashReporter" = false;
+      "git.enableSmartCommit" = true;
     };
   };
 }

@@ -7,12 +7,6 @@
 
   time.timeZone = "Europe/Berlin";
 
-  # TODO: Test if it harms the system to exclude these lines
-  networking.useDHCP = false;
-  networking.interfaces.enp0s31f6.useDHCP = true;
-  networking.interfaces.wlp4s0.useDHCP = true;
-  networking.interfaces.wwp0s20f0u6i12.useDHCP = true;
-
   # Configure Bluetooth
   hardware.bluetooth.enable = true;
 
