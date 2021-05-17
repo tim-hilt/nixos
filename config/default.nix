@@ -2,6 +2,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true;
 
