@@ -14,9 +14,11 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "unstable";
     };
+
+    nixos-hardware.url = github:NixOS/nixos-hardware/master;
   };
 
-  outputs = inputs@{ self, unstable, utils, home-manager, neovim, ... }:
+  outputs = inputs@{ self, unstable, utils, home-manager, neovim, nixos-hardware, ... }:
     let suites = import ./suites.nix { inherit utils; inherit home-manager; };
     in utils.lib.systemFlake {
       inherit self inputs;
@@ -37,6 +39,13 @@
         channelName = "unstable";
       };
 
-      hosts.x1carbon.modules = suites.desktopModules ++ [ ./hosts/x1carbon ];
+      hosts.x1carbon.modules = suites.desktopModules ++ [
+        ./hosts/x1carbon
+      ];
+
+      hosts.x220.modules = suites.desktopModules ++ [
+        ./hosts/x220
+        nixos-hardware.nixosModules.lenovo-thinkpad-x220
+      ];
     };
 }

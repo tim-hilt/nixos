@@ -4,11 +4,12 @@
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  hardware.enableRedistributableFirmware = true;
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
 
-  # Configure Bluetooth
   hardware.bluetooth.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -59,17 +60,17 @@
   services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = true;
 
   # Commented out, because DP-Audio doesn't work with pipewire
-  # security.rtkit.enable = true;
+  security.rtkit.enable = true;
 
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
