@@ -58,6 +58,9 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    cups-kyodialog3
+  ];
 
   # Enable sound.
   # sound.enable = true;
