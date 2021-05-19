@@ -61,5 +61,4 @@
   programs.light.enable = true;
 
   users.extraUsers.tim.extraGroups = [ "video" ];
-  };
 }
