@@ -27,6 +27,7 @@
       shellAbbrs = {
         k = "kill (ps aux | fzf | awk '{print $2}')";
         r = "ranger";
+        nrs = "sudo nixos-rebuild switch";
       };
     };
     git = {
