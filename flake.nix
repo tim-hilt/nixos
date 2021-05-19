@@ -15,11 +15,16 @@
       inputs.nixpkgs.follows = "unstable";
     };
 
-    nixos-hardware.url = github:NixOS/nixos-hardware/master;
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = inputs@{ self, unstable, utils, home-manager, neovim, nixos-hardware, ... }:
-    let suites = import ./suites.nix { inherit utils; inherit home-manager; };
+  outputs =
+    inputs@{ self, unstable, utils, home-manager, neovim, nixos-hardware, ... }:
+    let
+      suites = import ./suites.nix {
+        inherit utils;
+        inherit home-manager;
+      };
     in utils.lib.systemFlake {
       inherit self inputs;
 
@@ -31,6 +36,14 @@
       sharedOverlays = [
         (final: prev: {
           neovim-nightly = neovim.defaultPackage.${prev.system};
+          plasma5Packages = prev.plasma5Packages // {
+            plasma5 = prev.plasma5Packages.plasma5 // {
+              kwin = prev.plasma5Packages.plasma5.kwin.overrideAttrs (old: {
+                buildInputs = (old.buildInputs or [ ])
+                  ++ [ prev.lcms2 prev.plasma5Packages.krunner ];
+              });
+            };
+          };
         })
       ];
 
@@ -39,13 +52,9 @@
         channelName = "unstable";
       };
 
-      hosts.x1carbon.modules = suites.desktopModules ++ [
-        ./hosts/x1carbon
-      ];
+      hosts.x1carbon.modules = suites.desktopModules ++ [ ./hosts/x1carbon ];
 
-      hosts.x220.modules = suites.desktopModules ++ [
-        ./hosts/x220
-        nixos-hardware.nixosModules.lenovo-thinkpad-x220
-      ];
+      hosts.x220.modules = suites.desktopModules
+        ++ [ ./hosts/x220 nixos-hardware.nixosModules.lenovo-thinkpad-x220 ];
     };
 }
