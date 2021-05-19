@@ -1,29 +1,5 @@
 { pkgs, ... }: {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  hardware.enableRedistributableFirmware = true;
-
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "Europe/Berlin";
-
   hardware.bluetooth.enable = true;
-
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  # Select internationalisation properties.
-  i18n.extraLocaleSettings = {
-    LC_TIME = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-  };
-
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "de";
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -58,15 +34,16 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  services.printing.drivers = with pkgs; [
-    cups-kyodialog3
-  ];
+  # services.printing.drivers = with pkgs; [
+  #   cups-kyodialog3
+  # ];
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
 
-  # Enable sound.
+  # Enable sound. (But don't use pulse)
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
-  # Commented out, because DP-Audio doesn't work with pipewire
   security.rtkit.enable = true;
 
   services.pipewire = {
@@ -81,22 +58,8 @@
     touchpad.naturalScrolling = true;
   };
 
-  environment.variables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
-
-  environment.systemPackages = with pkgs; [ ranger tmux ];
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
   programs.light.enable = true;
 
-  users.extraUsers.tim = {
-    isNormalUser = true;
-    description = "Tim Hilt";
-    shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+  users.extraUsers.tim.extraGroups = [ "video" ];
   };
 }

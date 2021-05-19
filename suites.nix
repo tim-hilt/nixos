@@ -1,8 +1,11 @@
 { utils, home-manager }:
 let
-  sharedModules = utils.lib.modulesFromList [ ./config ];
-  desktopModules = with sharedModules; [
-    config
+  sharedModules = utils.lib.modulesFromList [ ./config/server.nix ./config/desktop.nix ];
+
+  # serverModules is just a specd down config of desktop
+  # TODO: Adapt home-manager-config
+  nonGraphicalModules = with sharedModules; [
+    server
     utils.nixosModules.saneFlakeDefaults
     home-manager.nixosModules.home-manager
     {
@@ -11,4 +14,6 @@ let
       home-manager.users.tim = ./home-manager;
     }
   ];
-in { inherit sharedModules desktopModules; }
+
+  desktopModules = with sharedModules; nonGraphicalModules ++ [ desktop ];
+in { inherit sharedModules nonGraphicalModules desktopModules; }
