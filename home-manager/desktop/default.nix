@@ -2,17 +2,18 @@
   imports = [ ./alacritty.nix ./vscode.nix ];
 
   home.packages = with pkgs; [
-    spotify
-    google-chrome
-    plasma-pa
+    alsaUtils
+    ark
     dmenu
+    dunst
+    google-chrome
     hack-font
     hsetroot
-    dunst
-    udiskie
+    plasma-pa
     playerctl
-    alsaUtils
+    spotify
     sxiv
+    udiskie
     # (import ./hello-derivation.nix pkgs)  # Commented out until I know how to properly use this with flakes
   ];
 
