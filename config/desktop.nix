@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  boot.extraModprobeConfig = ''
+    options hid_apple fnmode=2
+  '';
+
   hardware.bluetooth.enable = true;
 
   # Enable the X11 windowing system.
