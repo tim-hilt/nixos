@@ -36,14 +36,6 @@
       sharedOverlays = [
         (final: prev: {
           neovim-nightly = neovim.defaultPackage.${prev.system};
-          plasma5Packages = prev.plasma5Packages // {
-            plasma5 = prev.plasma5Packages.plasma5 // {
-              kwin = prev.plasma5Packages.plasma5.kwin.overrideAttrs (old: {
-                buildInputs = (old.buildInputs or [ ])
-                  ++ [ prev.lcms2 prev.plasma5Packages.krunner ];
-              });
-            };
-          };
         })
       ];
 

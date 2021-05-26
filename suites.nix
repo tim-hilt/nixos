@@ -18,4 +18,7 @@ let
   desktopModules = with sharedModules;
     nonGraphicalModules
     ++ [ desktop { home-manager.users.tim = ./home-manager/desktop; } ];
-in { inherit sharedModules nonGraphicalModules desktopModules; }
+
+  workModules = with sharedModules;
+    desktopModules ++ [{ home-manager.users.tim = ./home-manager/work; }];
+in { inherit sharedModules nonGraphicalModules desktopModules workModules; }
