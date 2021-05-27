@@ -30,6 +30,22 @@
         "type": "github"
       }
     },
+    "hello-kde": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1612805306,
+        "narHash": "sha256-dQ674M0ov6POPwEVB8NM2384StjHufZGszwfgDXXKKE=",
+        "owner": "n4n0GH",
+        "repo": "hello",
+        "rev": "87e2b561dd91859b4a6c1f3fe50dfd6f38c249ec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "n4n0GH",
+        "repo": "hello",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -92,6 +108,7 @@
     },
     "root": {
       "inputs": {
+        "hello-kde": "hello-kde",
         "home-manager": "home-manager",
         "neovim": "neovim",
         "nixos-hardware": "nixos-hardware",

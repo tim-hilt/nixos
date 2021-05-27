@@ -16,7 +16,7 @@
     };
 
     hello-kde = {
-      url = "https://github.com/n4n0GH/hello";
+      url = "github:n4n0GH/hello";
       flake = false;
     };
 
@@ -41,7 +41,7 @@
       sharedOverlays = [
         (final: prev: {
           neovim-nightly = neovim.defaultPackage.${prev.system};
-          hello-kde = prev.callPackage ./overlays/hello-kde.nix {};
+          hello-kde = prev.callPackage ./overlays/hello-kde.nix;
         })
       ];
 

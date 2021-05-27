@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, hello-kde, ... }:
 pkgs.libsForQt5.callPackage ({ mkDerivation }: mkDerivation) { } rec {
-  name = "hello";
+  name = "hello-kde";
   version = "Hidden Hedgehog";
   src = hello-kde;
   nativeBuildInputs = with pkgs; [ cmake ];
