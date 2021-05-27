@@ -14,7 +14,7 @@
     spotify
     sxiv
     udiskie
-    # (import ./hello-derivation.nix pkgs)  # Commented out until I know how to properly use this with flakes
+    hello-kde
   ];
 
   programs.zathura.enable = true;

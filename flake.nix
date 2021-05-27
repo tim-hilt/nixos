@@ -15,11 +15,16 @@
       inputs.nixpkgs.follows = "unstable";
     };
 
+    hello-kde = {
+      url = "https://github.com/n4n0GH/hello";
+      flake = false;
+    };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
-    inputs@{ self, unstable, utils, home-manager, neovim, nixos-hardware, ... }:
+    inputs@{ self, unstable, utils, home-manager, neovim, hello-kde, nixos-hardware, ... }:
     let
       suites = import ./suites.nix {
         inherit utils;
@@ -36,6 +41,7 @@
       sharedOverlays = [
         (final: prev: {
           neovim-nightly = neovim.defaultPackage.${prev.system};
+          hello-kde = prev.callPackage ./overlays/hello-kde.nix {};
         })
       ];
 

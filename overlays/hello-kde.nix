@@ -2,12 +2,7 @@
 pkgs.libsForQt5.callPackage ({ mkDerivation }: mkDerivation) { } rec {
   name = "hello";
   version = "Hidden Hedgehog";
-  src = pkgs.fetchFromGitHub {
-    owner = "n4n0GH";
-    repo = "hello";
-    rev = "master";
-    sha256 = "1898swsq07rwnd3gdff7v153hzyv9k1hf5817z7a7gr8rphbn3km";
-  };
+  src = hello-kde;
   nativeBuildInputs = with pkgs; [ cmake ];
   buildInputs = with pkgs; [
     extra-cmake-modules
