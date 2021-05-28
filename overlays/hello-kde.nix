@@ -6,9 +6,9 @@ pkgs.libsForQt5.callPackage ({ mkDerivation }: mkDerivation) { } rec {
     owner = "n4n0GH";
     repo = "hello";
     rev = "master";
-    sha256 = "1898swsq07rwnd3gdff7v153hzyv9k1hf5817z7a7gr8rphbn3km";
+    sha256 = "1898swsq07rwnd3gdff7v153zyv9k1hf5817z7a7gr8rphbn3km";
   };
-  nativeBuildInputs = with pkgs; [ cmake ];
+  nativeBuildInputs = with pkgs; [ gcc cmake ];
   buildInputs = with pkgs; [
     extra-cmake-modules
     epoxy
