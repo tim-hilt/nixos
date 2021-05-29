@@ -35,7 +35,7 @@
       sharedOverlays = [
         (final: prev: {
           neovim-nightly = neovim.defaultPackage.${prev.system};
-          hello-kde = final.callPackage ./overlays/hello-kde.nix { };
+          hello-kde = unstable.legacyPackages.x86_64-linux.callPackage ./overlays/hello-kde.nix { };
         })
       ];
 
