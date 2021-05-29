@@ -19,20 +19,6 @@
   services.autorandr.enable = true;
   services.logind.lidSwitchDocked = "suspend";
 
-  # Commented out until I know how to properly use this with flakes
-  #   nixpkgs.overlays = [
-  #     (self: super: {
-  #       dwm = super.dwm.overrideAttrs (_: {
-  #         src = pkgs.fetchFromGitHub {
-  #           owner = "tim-hilt";
-  #           repo = "dwm-src";
-  #           rev = "main";
-  #           sha256 = "0yb9n715i569mm257c2mf0k1f4y0ayqx7mms7dvp58kz09p64303";
-  #         };
-  #       });
-  #     })
-  #   ];
-
   # Configure keymap in X11
   services.xserver.layout = "de";
   services.xserver.xkbVariant = "nodeadkeys";
