@@ -1,4 +1,4 @@
-{ utils, home-manager }:
+{ unstable, utils, home-manager, ... }:
 let
   sharedModules =
     utils.lib.modulesFromList [ ./config/server.nix ./config/desktop.nix ];
@@ -12,6 +12,12 @@ let
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.tim = ./home-manager/server;
+      home-manager.sharedModules = [{
+        home.packages = with unstable.legacyPackages.x86_64-linux; [
+          tmux
+          ranger
+        ];
+      }];
     }
   ];
 

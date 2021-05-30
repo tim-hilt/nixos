@@ -19,6 +19,8 @@
   services.autorandr.enable = true;
   services.logind.lidSwitchDocked = "suspend";
 
+  programs.light.enable = true; # Daemon to configure backlight on laptop
+
   # Configure keymap in X11
   services.xserver.layout = "de";
   services.xserver.xkbVariant = "nodeadkeys";
@@ -29,8 +31,6 @@
   # services.printing.drivers = with pkgs; [
   #   cups-kyodialog3
   # ];
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
 
   # Enable sound. (But don't use pulse)
   # sound.enable = true;
@@ -49,8 +49,6 @@
     enable = true;
     touchpad.naturalScrolling = true;
   };
-
-  programs.light.enable = true;
 
   users.extraUsers.tim.extraGroups = [ "video" ];
 }

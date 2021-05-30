@@ -26,6 +26,7 @@
     inputs@{ self, unstable, utils, home-manager, neovim, nixos-hardware, ... }:
     let
       suites = import ./suites.nix {
+        inherit unstable;
         inherit utils;
         inherit home-manager;
       };

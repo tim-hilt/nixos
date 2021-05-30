@@ -28,8 +28,6 @@
     VISUAL = "nvim";
   };
 
-  environment.systemPackages = with pkgs; [ ranger tmux ];
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
