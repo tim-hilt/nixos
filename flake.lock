@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "dwm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1619215508,
+        "narHash": "sha256-AwxibgJ/onJ3O7rW07FXwBMXJnBVsFNErcmUWMKxaXk=",
+        "owner": "tim-hilt",
+        "repo": "dwm-src",
+        "rev": "7691d28d8688061e766472bbd7c092d5c9fc20a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tim-hilt",
+        "repo": "dwm-src",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1610051610,
@@ -92,6 +108,7 @@
     },
     "root": {
       "inputs": {
+        "dwm": "dwm",
         "home-manager": "home-manager",
         "neovim": "neovim",
         "nixos-hardware": "nixos-hardware",

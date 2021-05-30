@@ -15,6 +15,11 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "unstable";
     };
+
+    dwm = {
+      url = "github:tim-hilt/dwm-src";
+      flake = false;
+    };
   };
 
   outputs =
@@ -37,14 +42,7 @@
           neovim-nightly = neovim.defaultPackage.${prev.system};
           hello-kde = unstable.legacyPackages.x86_64-linux.callPackage
             ./overlays/hello-kde.nix { };
-          dwm = prev.dwm.overrideAttrs (_: {
-            src = unstable.legacyPackages.x86_64-linux.fetchFromGitHub {
-              owner = "tim-hilt";
-              repo = "dwm-src";
-              rev = "main";
-              sha256 = "0yb9n715i569mm257c2mf0k1f4y0ayqx7mms7dvp58kz09p64303";
-            };
-          });
+          dwm = prev.dwm.overrideAttrs (_: { src = inputs.dwm; });
         })
       ];
 
