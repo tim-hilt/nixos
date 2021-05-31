@@ -16,6 +16,7 @@ let
         home.packages = with unstable.legacyPackages.x86_64-linux; [
           tmux
           ranger
+          gdu
         ];
       }];
     }

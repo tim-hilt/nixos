@@ -28,6 +28,11 @@
     VISUAL = "nvim";
   };
 
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 

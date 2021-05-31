@@ -5,7 +5,6 @@
     alsaUtils
     ark
     dmenu
-    dunst
     google-chrome
     hack-font
     hsetroot
@@ -18,4 +17,8 @@
   ];
 
   programs.zathura.enable = true;
+
+  services.dunst = {
+    enable = true;
+  };
 }

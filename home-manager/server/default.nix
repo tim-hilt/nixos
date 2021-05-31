@@ -31,4 +31,10 @@
   programs.fzf = { enable = true; };
 
   programs.htop = { enable = true; };
+
+  programs.direnv = {
+    enable = true;
+    enableNixDirenvIntegration = true;
+    enableFishIntegration = true;
+  };
 }
