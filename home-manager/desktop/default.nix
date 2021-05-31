@@ -1,5 +1,8 @@
 { pkgs, ... }: {
-  imports = [ ./alacritty.nix ./vscode.nix ];
+  # Link ./settings.json like this:
+  # ln -s /home/tim/dev/nixos/home-manager/desktop/vscode/settings.json /home/tim/.config/Code/UseR/settings.json
+
+  imports = [ ./alacritty.nix ./vscode ];
 
   home.packages = with pkgs; [
     alsaUtils
