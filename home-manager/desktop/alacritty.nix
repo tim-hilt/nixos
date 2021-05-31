@@ -19,8 +19,8 @@
       # TODO: Revisit the color choices here
       colors = {
         primary = {
-          background = "0x282c34";
-          foreground = "0xbbc2cf";
+          background = "0x1f2428";
+          foreground = "0xcccccc";
         };
         normal = {
           black = "0x282c34";
