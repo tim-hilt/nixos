@@ -14,24 +14,5 @@
       version = "3.4.5";
       sha256 = "0f5n0i337h8bc66zv7j54rl42na09jpcivhs5s5f59g4vavrhfk7";
     }];
-    userSettings = {
-      "workbench.colorTheme" = "GitHub Dark";
-      "workbench.sideBar.location" = "right";
-      "workbench.iconTheme" = "file-icons";
-      "workbench.startupEditor" = "none";
-      "editor.minimap.enabled" = false;
-      "window.menuBarVisibility" = "toggle";
-      "breadcrumbs.enabled" = false;
-      "workbench.settings.editor" = "json";
-      "git.confirmSync" = false;
-      "editor.selectionClipboard" = false;
-      "workbench.editor.enablePreviewFromQuickOpen" = false;
-      "workbench.editor.enablePreview" = false;
-      "editor.scrollbar.horizontal" = "hidden";
-      "editor.scrollbar.vertical" = "hidden";
-      "telemetry.enableTelemetry" = false;
-      "telemetry.enableCrashReporter" = false;
-      "git.enableSmartCommit" = true;
-    };
   };
 }
