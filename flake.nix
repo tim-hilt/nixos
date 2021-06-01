@@ -56,5 +56,8 @@
 
       hosts.x220.modules = suites.desktopModules
         ++ [ ./hosts/x220 nixos-hardware.nixosModules.lenovo-thinkpad-x220 ];
+
+      hosts.t14s.modules = suites.workModules
+        ++ [ ./hosts/t14s nixos-hardware.nixosModules.lenovo-thinkpad-t14s ];
     };
 }
