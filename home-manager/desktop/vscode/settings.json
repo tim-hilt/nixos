@@ -16,8 +16,6 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "git.enableSmartCommit": true,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
-    "go.useLanguageServer": true
+    "go.useLanguageServer": true,
+    "window.zoomLevel": 1
 }

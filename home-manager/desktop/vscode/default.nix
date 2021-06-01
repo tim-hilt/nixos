@@ -2,7 +2,6 @@
   programs.vscode = {
     enable = true;
     extensions = (with pkgs.vscode-extensions; [
-      eamodio.gitlens
       file-icons.file-icons
       github.github-vscode-theme
       coenraads.bracket-pair-colorizer-2
