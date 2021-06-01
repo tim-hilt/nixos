@@ -7,11 +7,19 @@
       coenraads.bracket-pair-colorizer-2
       bbenoist.Nix
       brettm12345.nixfmt-vscode
-    ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
-      name = "vscode-fileutils";
-      publisher = "sleistner";
-      version = "3.4.5";
-      sha256 = "0f5n0i337h8bc66zv7j54rl42na09jpcivhs5s5f59g4vavrhfk7";
-    }];
+    ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "vscode-fileutils";
+        publisher = "sleistner";
+        version = "3.4.5";
+        sha256 = "0f5n0i337h8bc66zv7j54rl42na09jpcivhs5s5f59g4vavrhfk7";
+      }
+      {
+        name = "auto-comment-blocks";
+        publisher = "kevinkyang";
+        version = "1.0.1";
+        sha256 = "0f5n0i337h8bc66zv7j54rl42na09jpcivhs5s5f59g4vavrhfk7";
+      }
+    ];
   };
 }
