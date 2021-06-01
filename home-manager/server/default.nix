@@ -14,8 +14,19 @@
       k = "kill (ps aux | fzf | awk '{print $2}')";
       r = "ranger";
       nrs = "sudo nixos-rebuild switch";
-      e = "nvim (fd -t f | fzf --preview='bat --color=always {}'";
+      e = "nvim (fd -t f | fzf --preview='bat --color=always {}')";
     };
+    plugins = [
+      {
+        name = "park.fish";
+        src = pkgs.fetchFromGitHub {
+          owner = "mattgreen";
+          repo = "park.fish";
+          rev = "main";
+          sha256 = "sha256-dQ674M0ov6POPwEVB8NM2384StjHufZGszwfgDXXKKE=";
+        }
+      }
+    ];
   };
 
   programs.git = {

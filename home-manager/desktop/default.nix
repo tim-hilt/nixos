@@ -22,6 +22,18 @@
 
   programs.zathura.enable = true;
 
+  programs.fish.plugins = [
+    {
+      name = "done";
+      src = pkgs.fetchFromGitHub {
+        owner = "franciscolourenco";
+        repo = "done";
+        rev = "master";
+        sha256 = "sha256-dQ674M0ov6POPwEVB8NM2384StjHufZGszwfgDXXKKE=";
+      }
+    }
+  ];
+
   services.dunst = {
     enable = true;
   };
