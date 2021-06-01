@@ -17,6 +17,7 @@
     sxiv
     udiskie
     hello-kde
+    thunderbird
   ];
 
   programs.zathura.enable = true;
