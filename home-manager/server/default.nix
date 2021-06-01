@@ -23,7 +23,7 @@
           owner = "mattgreen";
           repo = "park.fish";
           rev = "main";
-          sha256 = "sha256-dQ674M0ov6POPwEVB8NM2384StjHufZGszwfgDXXKKE=";
+          sha256 = "sha256-oJEmSez26xANGUlbTvMSfuv24/VpF18mzFi+NrWg55Q=";
         };
       }
     ];

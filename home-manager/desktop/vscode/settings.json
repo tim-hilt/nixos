@@ -28,7 +28,7 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["#"],
-            "after": ["workbench.action.files.save"]
+            "commands": ["workbench.action.files.save"]
         }
     ],
 }

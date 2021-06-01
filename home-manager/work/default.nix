@@ -4,8 +4,8 @@
     teams
     jetbrains.idea-ultimate
     keepassxc
-    go
     gcc
+    gnumake
   ];
 
   programs.git = {
@@ -14,4 +14,9 @@
   };
 
   programs.vscode.extensions = with pkgs.vscode-extensions; [ golang.Go ];
+
+  programs.go = {
+    enable = true;
+    goPrivate = [ "git.daimler.com/*" ];
+  };
 }
