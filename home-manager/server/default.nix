@@ -24,7 +24,7 @@
           repo = "park.fish";
           rev = "main";
           sha256 = "sha256-dQ674M0ov6POPwEVB8NM2384StjHufZGszwfgDXXKKE=";
-        }
+        };
       }
     ];
   };
