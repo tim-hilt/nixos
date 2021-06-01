@@ -19,7 +19,7 @@
       # TODO: Revisit the color choices here
       colors = {
         primary = {
-          background = "0x1f2428";
+          background = "0x24292e";
           foreground = "0xcccccc";
         };
         normal = {
