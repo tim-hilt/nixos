@@ -5,6 +5,7 @@
     jetbrains.idea-ultimate
     keepassxc
     go
+    gcc
   ];
 
   programs.git = {
