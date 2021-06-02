@@ -1,7 +1,6 @@
 { pkgs, ... }: {
 
   home.packages = with pkgs; [
-    teams
     jetbrains.idea-ultimate
     keepassxc
     gcc
