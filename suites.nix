@@ -1,7 +1,11 @@
 { unstable, utils, home-manager, ... }:
 let
   sharedModules =
-    utils.lib.modulesFromList [ ./config/server.nix ./config/desktop.nix ];
+    utils.lib.modulesFromList [
+      ./config/server.nix 
+      ./config/desktop.nix
+      ./config/work.nix
+    ];
 
   # serverModules is just a specd down config of desktop
   nonGraphicalModules = with sharedModules; [
@@ -24,8 +28,18 @@ let
 
   desktopModules = with sharedModules;
     nonGraphicalModules
-    ++ [ desktop { home-manager.users.tim = ./home-manager/desktop; } ];
+    ++ [
+      desktop
+      {
+        home-manager.users.tim = ./home-manager/desktop;
+      }
+    ];
 
   workModules = with sharedModules;
-    desktopModules ++ [{ home-manager.users.tim = ./home-manager/work; }];
+  desktopModules ++ [
+    work
+    {
+      home-manager.users.tim = ./home-manager/work;
+    }
+  ];
 in { inherit sharedModules nonGraphicalModules desktopModules workModules; }

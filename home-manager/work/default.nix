@@ -5,6 +5,8 @@
     keepassxc
     gcc
     gnumake
+    kubectl
+    kind
   ];
 
   programs.git = {
