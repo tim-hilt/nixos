@@ -17,7 +17,7 @@
 
   systemd.services.bluetooth.serviceConfig.ExecStart = [
     ""
-    "${pkgs.bluez}/libexec/bluetooth/bluetoothd --noplugin=sap --noplugin=avrcp"
+    "${pkgs.bluez}/libexec/bluetooth/bluetoothd --noplugin=sap,avrcp"
   ];
 
   # Enable the X11 windowing system.
