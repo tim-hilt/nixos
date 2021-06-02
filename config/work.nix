@@ -1,4 +1,5 @@
 { pkgs, ... }: {
-  virtualisation.podman.enable = true;
-  virtualisation.podman.dockerCompat = true;
+  virtualisation.docker.enable = true;
+
+  users.extraUsers.tim.extraGroups = [ "docker" ];
 }
