@@ -6,11 +6,6 @@
   boot.kernelModules = [ "hid-apple" ];
 
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.settings = {
-    General = {
-      Enable = "Source,Sink,Media,Socket";
-    };
-  };
 
   # Comment this in the first time you want to connect to AirPods.
   # In order to connect, you have to press the button on the back
@@ -22,7 +17,7 @@
 
   systemd.services.bluetooth.serviceConfig.ExecStart = [
     ""
-    "${pkgs.bluez}/libexec/bluetooth/bluetoothd --noplugin=sap"
+    "${pkgs.bluez}/libexec/bluetooth/bluetoothd --noplugin=sap --noplugin=avrcp"
   ];
 
   # Enable the X11 windowing system.
@@ -51,17 +46,17 @@
   # ];
 
   # Enable sound. (But don't use pulse)
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.package = pkgs.pulseaudioFull;
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
-  # security.rtkit.enable = true;
+  security.rtkit.enable = true;
 
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
