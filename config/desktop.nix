@@ -6,6 +6,11 @@
   boot.kernelModules = [ "hid-apple"  ];
 
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.settings = {
+    General = {
+      ControllerMode = "bredr";
+    };
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
