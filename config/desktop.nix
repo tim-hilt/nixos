@@ -1,16 +1,17 @@
 { pkgs, ... }: {
   # Needed for Keychron K2
   boot.extraModprobeConfig = ''
-      options hid_apple fnmode=2
+    options hid_apple fnmode=2
   '';
-  boot.kernelModules = [ "hid-apple"  ];
+  boot.kernelModules = [ "hid-apple" ];
 
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.settings = {
-    General = {
-      ControllerMode = "bredr";
-    };
-  };
+  # Comment this in the first time you want to connect to AirPods.
+  # In order to connect, you have to press the button on the back
+  # of the AirPods case.
+  # `breder` is only needed for the initial connection of the AirPods.
+  # Afterwards the mode can be relaxed to `dual` (the default) again.
+  # hardware.bluetooth.settings = { General = { ControllerMode = "bredr"; }; };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;

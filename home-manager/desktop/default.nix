@@ -21,6 +21,8 @@
     fishPlugins.done
   ];
 
+  fonts.fontconfig.enable = true;
+
   programs.zathura.enable = true;
 
   services.dunst = {
