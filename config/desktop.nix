@@ -27,13 +27,6 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
-  # dwm related
-  services.xserver.windowManager.dwm.enable = true;
-  services.autorandr.enable = true;
-  services.logind.lidSwitchDocked = "suspend";
-
-  programs.light.enable = true; # Daemon to configure backlight on laptop
-
   # Configure keymap in X11
   services.xserver.layout = "de";
   services.xserver.xkbVariant = "nodeadkeys";

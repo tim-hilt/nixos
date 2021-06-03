@@ -31,4 +31,5 @@
             "commands": ["workbench.action.files.save"]
         }
     ],
+    "explorer.confirmDelete": false,
 }

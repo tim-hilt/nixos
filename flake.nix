@@ -15,11 +15,6 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "unstable";
     };
-
-    dwm = {
-      url = "github:tim-hilt/dwm-src";
-      flake = false;
-    };
   };
 
   outputs =
@@ -43,7 +38,6 @@
           neovim-nightly = neovim.defaultPackage.${prev.system};
           hello-kde = unstable.legacyPackages.x86_64-linux.callPackage
             ./overlays/hello-kde.nix { };
-          dwm = prev.dwm.overrideAttrs (_: { src = inputs.dwm; });
         })
       ];
 
