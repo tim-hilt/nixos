@@ -15,6 +15,7 @@
       r = "ranger";
       nrs = "sudo nixos-rebuild switch";
       e = "nvim (fd -t f | fzf --preview='bat --color=always {}')";
+      ni = "nmcli device wifi list";
     };
     plugins = [
       {
