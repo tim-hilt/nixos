@@ -2,6 +2,6 @@
 [
     {
         "key": "ctrl+n",
-        "command": "extension.advancedNewFile"
+        "command": "fileutils.newFileAtRoot"
     }
 ]

@@ -9,6 +9,7 @@
     ark
     dmenu
     google-chrome
+    gparted
     hack-font
     hsetroot
     plasma-pa
