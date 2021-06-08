@@ -8,6 +8,7 @@
     alsaUtils
     ark
     google-chrome
+    gparted
     hack-font
     plasma-pa
     spotify

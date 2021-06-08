@@ -8,6 +8,7 @@
       coenraads.bracket-pair-colorizer-2
       bbenoist.Nix
       brettm12345.nixfmt-vscode
+      gruntfuggly.todo-tree
     ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-fileutils";
