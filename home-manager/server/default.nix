@@ -16,6 +16,7 @@
       nrs = "sudo nixos-rebuild switch";
       e = "nvim (fd -t f | fzf --preview='bat --color=always {}')";
       ni = "nmcli device wifi list";
+      iso_usb = "sudo dd bs=4M if=path/to/input.iso of=/dev/sd<?> conv=fdatasync status=progress";
     };
     plugins = [
       {

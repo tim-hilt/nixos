@@ -7,6 +7,7 @@
     gnumake
     kubectl
     kind
+    yarn
   ];
 
   programs.git = {
@@ -14,7 +15,10 @@
     extraConfig.core.hooksPath = toString ./git-hooks;
   };
 
-  programs.vscode.extensions = with pkgs.vscode-extensions; [ golang.Go ];
+  programs.vscode.extensions = with pkgs.vscode-extensions; [
+    golang.Go
+    github.vscode-pull-request-github
+  ];
 
   programs.go = {
     enable = true;
