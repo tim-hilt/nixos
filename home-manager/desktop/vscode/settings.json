@@ -36,6 +36,8 @@
         "HACK",
         "FIXME",
         "TODO",
+        "INFO",
+        "NOTE",
         "XXX",
         "[ ]",
         "[x]"
