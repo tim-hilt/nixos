@@ -5,8 +5,6 @@
     keepassxc
     gcc
     gnumake
-    kubectl
-    kind
     yarn
   ];
 
