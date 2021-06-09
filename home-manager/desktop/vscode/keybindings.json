@@ -3,5 +3,9 @@
     {
         "key": "ctrl+n",
         "command": "fileutils.newFileAtRoot"
-    }
+    },
+    {
+        "key": "ctrl+0",
+        "command": "workbench.action.zoomReset"
+    },
 ]
