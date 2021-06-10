@@ -24,7 +24,7 @@
         sha256 = "sha256-oJEmSez26xANGUlbTvMSfuv24/VpF18mzFi+NrWg55Q=";
       };
     }];
-    programs.fish.promptInit = ''
+    promptInit = ''
       any-nix-shell fish --info-right | source
     '';
   };
