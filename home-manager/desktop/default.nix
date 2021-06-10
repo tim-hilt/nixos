@@ -1,5 +1,5 @@
-{ pkgs, nix-doom-emacs, ... }: {
-  imports = [ nix-doom-emacs.hmModule ./alacritty.nix ./vscode ];
+{ pkgs, ... }: {
+  imports = [ ./alacritty.nix ./vscode ];
 
   home.packages = with pkgs; [
     alsaUtils
@@ -19,8 +19,8 @@
 
   programs.zathura.enable = true;
 
-#   programs.doom-emacs = {
-#     enable = true;
-#     doomPrivateDir = ./doom.d;
-#   };
+  programs.doom-emacs = {
+    enable = true;
+    doomPrivateDir = ./doom.d;
+  };
 }

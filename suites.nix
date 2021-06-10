@@ -1,5 +1,6 @@
 { unstable, utils, home-manager, nix-doom-emacs, ... }:
 let
+  inherit (unstable) lib;
   sharedModules =
     utils.lib.modulesFromList [
       ./config/server.nix 
@@ -31,7 +32,12 @@ let
     ++ [
       desktop
       {
-        home-manager.users.tim = ./home-manager/desktop;
+        home-manager.users.tim = lib.mkMerge [
+          {
+            imports = [ nix-doom-emacs.hmModule ];
+          }
+          ./home-manager/desktop
+        ];
       }
     ];
 

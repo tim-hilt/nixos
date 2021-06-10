@@ -8,4 +8,8 @@
         "key": "ctrl+0",
         "command": "workbench.action.zoomReset"
     },
+    {
+        "key": "ctrl+k f",
+        "command": "workbench.action.closeFolder"
+    },
 ]
