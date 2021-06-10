@@ -1,7 +1,4 @@
 { pkgs, nix-doom-emacs, ... }: {
-  # Link ./settings.json like this:
-  # ln -s /home/tim/dev/nixos/home-manager/desktop/vscode/settings.json /home/tim/.config/Code/UseR/settings.json
-
   imports = [ nix-doom-emacs.hmModule ./alacritty.nix ./vscode ];
 
   home.packages = with pkgs; [
@@ -22,8 +19,8 @@
 
   programs.zathura.enable = true;
 
-  programs.doom-emacs = {
-    enable = true;
-    doomPrivateDir = ./doom.d;
-  };
+#   programs.doom-emacs = {
+#     enable = true;
+#     doomPrivateDir = ./doom.d;
+#   };
 }

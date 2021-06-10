@@ -1,4 +1,4 @@
-{ unstable, utils, home-manager, ... }:
+{ unstable, utils, home-manager, nix-doom-emacs, ... }:
 let
   sharedModules =
     utils.lib.modulesFromList [
