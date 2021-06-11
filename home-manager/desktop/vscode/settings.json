@@ -43,5 +43,6 @@
         "[x]"
     ],
     "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-    "explorer.confirmDelete": false
+    "todo-tree.highlights.useColourScheme": true,
+    "explorer.confirmDelete": false,
 }

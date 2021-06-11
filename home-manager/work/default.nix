@@ -7,6 +7,8 @@
     gcc
     gnumake
     yarn
+    kubectl
+    k3d
   ];
 
   programs.git = {
