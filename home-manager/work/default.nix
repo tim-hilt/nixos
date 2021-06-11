@@ -8,7 +8,9 @@
     gnumake
     yarn
     kubectl
-    k3d
+    kube3d
+    kubernetes-helm
+    k9s
   ];
 
   programs.git = {
@@ -31,5 +33,9 @@
   programs.go = {
     enable = true;
     goPrivate = [ "git.daimler.com/*" ];
+  };
+
+  programs.fish.shellAbbrs = {
+    k = "kubectl";
   };
 }

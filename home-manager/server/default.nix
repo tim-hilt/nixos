@@ -7,7 +7,7 @@
     enable = true;
     functions = { fish_greeting = { body = ""; }; };
     shellAbbrs = {
-      k = "kill (ps aux | fzf | awk '{print $2}')";
+      kill = "kill (ps aux | fzf | awk '{print $2}')";
       r = "ranger";
       nrs = "sudo nixos-rebuild switch";
       e = "nvim (fd -t f | fzf --preview='bat --color=always {}')";

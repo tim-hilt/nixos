@@ -15,4 +15,5 @@ NixOS is a Linux-distribution based on the nix-package-manager. Its biggest stre
 
 - [ ] Configure dunst via home-manager
 - [ ] Install and configure gammastep (successor to redshift)
-- [ ] Find out, how to configure Displayport-Audio
+- [ ] Find out, how to configure Displayport-Audio (on x1 Carbon)
+  - As an aside: It's working flawlessy on KDE Neon
