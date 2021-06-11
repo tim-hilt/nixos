@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  imports = [ ./alacritty.nix ./vscode ];
+{ pkgs, doom-emacs, ... }: {
+  imports = [ doom-emacs.hmModule ./alacritty.nix ./vscode ];
 
   home.packages = with pkgs; [
     alsaUtils

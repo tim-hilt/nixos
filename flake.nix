@@ -5,7 +5,7 @@
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nix-doom-emacs.url = "github:vlaci/nix-doom-emacs";
+    doom-emacs.url = "github:vlaci/nix-doom-emacs";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -19,13 +19,13 @@
   };
 
   outputs =
-    inputs@{ self, unstable, utils, home-manager, neovim, nixos-hardware, nix-doom-emacs, ... }:
+    inputs@{ self, unstable, utils, home-manager, neovim, nixos-hardware, doom-emacs, ... }:
     let
       suites = import ./suites.nix {
         inherit unstable;
         inherit utils;
         inherit home-manager;
-        inherit nix-doom-emacs;
+        inherit doom-emacs;
       };
     in utils.lib.systemFlake {
       inherit self inputs;
