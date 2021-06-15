@@ -8,7 +8,7 @@
     gnumake
     yarn
     kubectl
-    kube3d
+    kind
     kubernetes-helm
     k9s
   ];
@@ -21,6 +21,7 @@
   programs.vscode.extensions = (with pkgs.vscode-extensions; [
     golang.Go
     github.vscode-pull-request-github
+    ms-azuretools.vscode-docker
   ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "vscode-thunder-client";
@@ -35,7 +36,9 @@
     goPrivate = [ "git.daimler.com/*" ];
   };
 
-  programs.fish.shellAbbrs = {
+  programs.fish.shelAbbrs = {
     k = "kubectl";
+    dirm = "docker image rm -f (docker images | fzf | awk '{print $3}')";
+    dcrm = "docker container rm (docker ps -a | fzf | awk '{print $1}')"
   };
 }
